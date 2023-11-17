@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Hive DB - Log in</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+    <style>
+        html,
+        body,
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            font-family: 'Ubuntu', sans-serif;
+            min-height: 120vh;
+            min-height: 100vh;
+            height: 100vh;
+        }
+
+        main {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 42px;
+        }
+
+        .title-section {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+            align-items: center;
+
+        }
+
+        .title {
+            font-size: 60px;
+            color: #1e1e1e;
+        }
+
+        .subtitle {
+            font-size: 38px;
+            color: #FF6600;
+        }
+
+        .login-form {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .input {
+            border: solid #9A9A9A 3px;
+            border-radius: 4px;
+            font-size: 19px;
+            padding: 3px 10px;
+            box-sizing: border-box;
+            color: #4b4b4b;
+            outline: none;
+            background-color: #D9D9D9;
+        }
+
+        .text-input {
+            background-color: transparent;
+            width: 100%;
+        }
+
+        .login-form-input-label {
+            position: absolute;
+            right: 100%;
+            width: 100%;
+            padding: 0 10px;
+            height: 100%;
+            display: flex;
+            justify-content: right;
+            align-items: center;
+            font-size: 19px;
+            color: #4b4b4b;
+        }
+
+        .login-form-group {
+            position: relative;
+            display: flex;
+            justify-content: center;
+        }
+
+        .login-form-input {
+            width: 30vw;
+        }
+
+        .button-input {
+            display: inline;
+            text-align: center;
+            display: block;
+        }
+
+        .button-input:active {
+            background-color: #4b4b4b;
+            color: #9A9A9A;
+        }
+    </style>
+</head>
+
+<body>
+    <main class="center-of-the-screen">
+        <div class="title-section">
+            <span class="title">HiveDB</span>
+            <span class="subtitle">#{clusterName}</span>
+        </div>
+        <form class="login-form" method="POST" action="/login">
+            <div class="login-form-group">
+                <label for="username" class="login-form-input-label">Имя пользователя:</label>
+                <input type="text" name="username" class="input text-input login-form-input">
+            </div>
+            <div class="login-form-group">
+                <label for="password" class="login-form-input-label">Пароль:</label>
+                <input type="password" name="password" class="input text-input login-form-input">
+            </div>
+            <div class="login-form-group">
+                <!-- <button class="input button-input">Войти</button> -->
+                <input name="login" class="input button-input" type="submit" value="Войти" />
+            </div>
+        </form>
+    </main>
+</body>
+
+</html>
