@@ -17,6 +17,7 @@ import Frontend.Views
 import Infrastructure.Config (Config (..))
 import Text.Blaze.Renderer.String (renderMarkup)
 import Text.Heterocephalus (compileHtmlFile)
+import qualified Data.Map as Map
 import Web.Scotty (get, html, param, post, redirect, scotty)
 import Web.Scotty.Login.Session
   ( addSession,

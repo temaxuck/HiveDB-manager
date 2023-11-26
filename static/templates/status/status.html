@@ -507,6 +507,25 @@
                                 <div class="main-group-item-key">Общий объём занятой памяти (ГБ): </div>
                                 <div class="main-group-item-value">#{show $ fst $ countUsedStorageForService service}/#{show $ snd $ countUsedStorageForService service}</div>
                             </div>
+                            <div class="main-group subgroup">
+                                <div class="main-group-title">Таблицы</div>
+                                    %{ forall sqlTable <- sql_tables service }
+                                        <div class="main-group subgroup">
+                                            <div class="main-group-title">Таблица #{table_name sqlTable}</div>
+                                                %{ forall (sql_column_name, sql_column_type) <- Map.toList (columns sqlTable) }
+                                                                                    
+                                                    <div class="main-group-item">
+                                                        <div class="main-group-item-key">
+                                                            #{sql_column_name}:
+                                                        </div>
+                                                        <div class="main-group-item-key">
+                                                            #{sql_column_type}
+                                                        </div>
+                                                    </div>
+                                                %{endforall}%
+                                            </div>
+                                    %{ endforall }
+                            </div>
                         </div>    
                     %{ endforall }
                     </div>
